@@ -1,0 +1,23 @@
+@use 'sass:color';
+
+// MIXINS IMPORT
+@use "mixins" as mixin;
+
+
+// Variables
+@use "variables" as *;
+
+
+// ⚙️🛠️ Fonts
+@import url("https://fonts.bunny.net/css?family=Nunito");
+
+
+
+// Layout styles    
+// @use "navbar";
+// @use "footer";
+
+// Guest View Styles
+// @use "home";
+// @use "news";
+// @use "meet";

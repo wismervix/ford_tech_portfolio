@@ -1,0 +1,23 @@
+// // ========================
+// // 📦🏷️ VARIABLES
+// // ========================
+
+// --variables
+:root {
+  --font-apple: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif;
+  --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+}
+// Body
+$body-bg: #ffffff;
+
+// Typography
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-serif: 'Playfair Display', serif;
+$font-size-base: 1rem;
+$line-height-base: 1.6;
+
+// Colors
+$primary: #754E3D;
+$secondary: #1e1e1e;
+$primary-overlay: #754e3dbd;
+$white-overlay: #ffffffbd;
