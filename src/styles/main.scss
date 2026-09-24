@@ -21,3 +21,78 @@
 // @use "home";
 // @use "news";
 // @use "meet";
+
+
+
+
+// // ========================
+// // 🌐🎨 GLOBAL STYLES
+// // ========================
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    // overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.text-primary {
+    color: $primary !important;
+}
+
+.bg-primary{
+    background-color: $primary !important;
+}
+
+.font-serif{
+    font-family: 'Playfair Display', serif;
+}
+
+.btn {
+    border: 0;
+    width: 100%;
+    border-radius: 4px;
+    @include mixin.centered;
+
+    &-primary {
+        color: #fff;
+        background-color: $primary;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: color.adjust($primary, $lightness: -10%);
+            // background-color: darken($primary, 10%);
+        }
+    }
+
+    &-transparent {
+        color: #fff;
+        background-color: transparent;
+        border: 1px solid #ffffff40;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            border: 1px solid #fff;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+p {
+    margin: 0;
+}
