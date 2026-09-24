@@ -1,24 +1,27 @@
 import { Routes, Route } from "react-router-dom";
+// import { useState } from "react";
 
-import Navbar from "./components/Navbar";
-
+import { TopNavBar } from "./components/TopNavBar";
+import { Navbar } from "./components/Navbar";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
-// import { useState } from "react";
 // import heroImg from "./assets/hero.png";
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "./assets/vite.svg";
 
 import "./styles/main.scss";
 
-import "./App.css";
 
 function App() {
   // const [count, setCount] = useState(0);
 
   return (
     <>
+      {/* Top Red Info Header */}
+      <TopNavBar />
+
+      {/* Main Navigation Header */}
       <Navbar />
 
       <Routes>

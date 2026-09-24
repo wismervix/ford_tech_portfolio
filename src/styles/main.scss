@@ -8,19 +8,19 @@
 @use "variables" as *;
 
 
-// ⚙️🛠️ Fonts
-@import url("https://fonts.bunny.net/css?family=Nunito");
-
-
 
 // Layout styles    
-// @use "navbar";
+@use "navbar" as *;
 // @use "footer";
 
 // Guest View Styles
 // @use "home";
 // @use "news";
 // @use "meet";
+
+
+// ⚙️🛠️ Fonts
+@import url("https://fonts.bunny.net/css?family=Nunito");
 
 
 
@@ -31,8 +31,6 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
