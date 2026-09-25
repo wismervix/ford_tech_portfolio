@@ -9,6 +9,9 @@
 
 
 
+// Utility styles    
+@use "animated-button" as *;
+
 // Layout styles    
 @use "navbar" as *;
 // @use "footer";
@@ -94,3 +97,4 @@ ul {
 p {
     margin: 0;
 }
+

@@ -36,6 +36,8 @@
     margin: 0 auto;
     padding: 0 1rem;
 
+    gap:20%;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -67,7 +69,7 @@
     align-items: center;
     justify-content: center;
 
-    background-color: $primary;
+    background-color: $secondary;
     color: $white;
 
     border-radius: 50%;
@@ -84,37 +86,16 @@
     transition: transform 150ms ease;
   }
 
-  &__brand-text {
-    line-height: 1;
-  }
-
   &__brand-name {
     display: block;
 
-    color: $primary;
+    color: $secondary;
 
-    font-family: sans-serif;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-    font-weight: 700;
+    // font-family: sans-serif;
+    font-size: 24px;
+    font-weight: 800;
 
-    letter-spacing: -0.025em;
-    text-transform: uppercase;
-  }
-
-  &__brand-subtitle {
-    display: block;
-
-    margin-top: 0.125rem;
-
-    color: $slate-500;
-
-    font-size: 10px;
-    line-height: 1.5;
-
-    font-weight: 600;
-    letter-spacing: 0.1em;
-
+    // letter-spacing: -0.025em;
     text-transform: uppercase;
   }
 
@@ -125,15 +106,25 @@
   &__desktop-nav {
     display: none;
     align-items: center;
+    justify-content: space-between;
     gap: 2rem;
-
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+    
+    flex:1;
+    
+    font-size: 18px;
+    // line-height: 1.25rem;
 
     font-weight: 600;
     letter-spacing: 0.05em;
 
     text-transform: uppercase;
+  }
+
+  &__nav-links{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
   }
 
   &__nav-link {
@@ -144,7 +135,7 @@
     border: 0;
     background: transparent;
 
-    color: $slate-700;
+    color: $primary;
 
     font: inherit;
     text-transform: inherit;
@@ -154,12 +145,30 @@
 
     transition: color 150ms ease;
 
+  // Divider
+  &:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    right: -1rem;
+
+    width: 2px;
+    height: 1.25rem;
+
+    background-color: $primary;
+
+    transform: translateY(-50%);
+    opacity: 0.35;
+  }
+
+
     &:hover {
-      color: $primary;
+      color: $secondary;
     }
 
     &--active {
-      color: $primary;
+      color: $secondary;
       font-weight: 700;
     }
 
@@ -167,11 +176,11 @@
       color: #e2e8f0;
 
       &:hover {
-        color: $primary;
+        color: $secondary;
       }
 
       &.navbar__nav-link--active {
-        color: $primary;
+        color: $secondary;
       }
     }
   }
@@ -184,7 +193,7 @@
     width: 100%;
     height: 0.125rem;
 
-    background-color: $primary;
+    background-color: $secondary;
     border-radius: 9999px;
   }
 
@@ -324,7 +333,7 @@
     border-radius: 0.5rem;
 
     background: transparent;
-    color: $slate-700;
+    color: $primary;
 
     font: inherit;
     text-align: left;
@@ -342,21 +351,21 @@
     }
 
     &--active {
-      background-color: rgba(140, 38, 35, 0.1);
-      color: $primary;
+      background-color: rgba(35, 128, 140, 0.1);
+      color: $secondary;
       font-weight: 700;
     }
 
     :global(.dark) & {
       color: #e2e8f0;
-
+      
       &:hover {
-        background-color: $slate-800;
+        background-color: $primary-dark;
       }
-
+      
       &.navbar__mobile-link--active {
-        background-color: rgba(140, 38, 35, 0.1);
-        color: $primary;
+        background-color: rgba(35, 128, 140, 0.1);
+        color: $secondary;
       }
     }
   }
