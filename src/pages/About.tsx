@@ -1,8 +1,8 @@
-import { SocialFeed } from "../components/social/SocialFeed";
+// import { SocialFeed } from "../components/social/SocialFeed";
 function About() {
   return (
     <main>
-      <SocialFeed />
+      <h1>About Me</h1>
     </main>
   );
 }

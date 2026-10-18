@@ -92,7 +92,7 @@
     color: $secondary;
 
     // font-family: sans-serif;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 800;
 
     // letter-spacing: -0.025em;
@@ -111,13 +111,13 @@
     
     flex:1;
     
-    font-size: 18px;
+    font-size: 17px;
     // line-height: 1.25rem;
 
     font-weight: 600;
     letter-spacing: 0.05em;
 
-    text-transform: uppercase;
+    text-transform: capitalize;
   }
 
   &__nav-links{
@@ -321,7 +321,7 @@
     font-weight: 600;
 
     letter-spacing: 0.05em;
-    text-transform: uppercase;
+    text-transform: capitalize;
   }
 
   &__mobile-link {

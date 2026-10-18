@@ -11,13 +11,14 @@
 
 // Utility styles    
 @use "animated-button" as *;
+@use "strip-animation" as *;
 
 // Layout styles    
 @use "navbar" as *;
 // @use "footer";
 
 // Guest View Styles
-// @use "home";
+@use "home";
 // @use "news";
 // @use "meet";
 
@@ -37,9 +38,10 @@
     box-sizing: border-box;
 }
 
-// body {
-//     overflow-x: hidden;
-// }
+body {
+    background: $body-bg;
+    // overflow-x: hidden;
+}
 
 a {
     color: inherit;

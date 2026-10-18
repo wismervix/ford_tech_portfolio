@@ -1,0 +1,103 @@
+// // ========================
+// // 📥 IMPORTS
+// // ========================
+@use "sass:color";
+@use "mixins" as mixin;
+@use "variables" as *;
+
+#home-page {
+  padding-bottom: 50px;
+  
+  .home-hero {
+    color: $white;
+    overflow: hidden;
+    min-height: 100vh;
+    position: relative;
+    background-color: #f0ffff;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background: url("../assets/images/home_hero__grid.png") center / 100% 100%
+        no-repeat;
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+
+      .right_limiter {
+        max-width: 779px;
+
+        .available_pill {
+          height: 45px;
+          max-width: 401px;
+          border-radius: 40px;
+          background-color: #e1f9dc;
+          margin-bottom: 80px;
+          @include mixin.centered(10px);
+          @include mixin.dynamic-text(500, 17px, #3fcd23, center, 134%);
+
+          .dot {
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            background-color: #178d00;
+          }
+        }
+
+        h1 {
+          @include mixin.dynamic-text(
+            600,
+            55px,
+            $primary,
+            start,
+            85px,
+            capitalize
+          );
+
+          span {
+            color: $secondary;
+          }
+        }
+
+        p {
+          margin: 37px 0;
+          @include mixin.dynamic-text(400, 28px, #727d79, start, 157%);
+        }
+
+        .btn-row {
+            margin-bottom:64px;
+          @include mixin.row-stack(29px);
+
+          .btn {
+            gap: 9px;
+            height: 46px;
+            padding: 10px;
+            border-radius: 9px;
+            max-width: fit-content;
+            border: 1px solid #727d79;
+            @include mixin.dynamic-text(
+              400,
+              18px,
+              $primary,
+              center,
+              28px,
+              capitalize
+            );
+
+            img{
+              // max-width: 32px;
+              width: 29px;
+              object-fit: contain;
+            }
+          }
+        }
+      }
+    }
+  }
+}

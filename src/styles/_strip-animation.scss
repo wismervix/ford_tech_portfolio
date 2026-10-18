@@ -1,0 +1,221 @@
+.strip-animation {
+  --strip-teal: #12b3a5;
+  --strip-navy: #0d142d;
+  --strip-white: #f5ffff;
+
+  position: relative;
+
+  width: 100%;
+  height: 92px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  // ==========================================================
+  // STATIONARY NAVY BACKGROUND
+  // ==========================================================
+
+  &__backdrop {
+    position: absolute;
+
+    inset: 50% 0 auto 0;
+
+    width: 100%;
+    height: 96px;
+
+    transform: translateY(-50%);
+
+    overflow: visible;
+
+    z-index: 1;
+
+    pointer-events: none;
+  }
+
+  &__backdrop-shape {
+    fill: var(--strip-navy);
+  }
+
+  // ==========================================================
+  // TEAL STRIP
+  // ==========================================================
+
+  &__strip {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: var(--strip-teal);
+  }
+
+  // ==========================================================
+  // MARQUEE TRACK
+  // ==========================================================
+
+  &__track {
+    display: flex;
+    align-items: center;
+
+    width: max-content;
+
+    flex-shrink: 0;
+
+    will-change: transform;
+
+    animation:
+      strip-marquee
+      var(--strip-speed)
+      linear
+      infinite;
+
+    // Don't start moving until the width has been measured.
+    &[style] {
+      animation-play-state: running;
+    }
+
+    &.is-reverse {
+      animation-name: strip-marquee-reverse;
+    }
+  }
+
+  // ==========================================================
+  // REPEATED GROUP
+  // ==========================================================
+
+  &__group {
+    display: flex;
+    align-items: center;
+
+    width: max-content;
+
+    flex: 0 0 auto;
+  }
+
+  // ==========================================================
+  // ITEM
+  // ==========================================================
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    flex: 0 0 auto;
+
+    color: var(--strip-white);
+
+    font-size: 13px;
+    font-weight: 400;
+
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  &__text {
+    display: inline-block;
+  }
+
+  // ==========================================================
+  // SEPARATOR
+  // ==========================================================
+
+  &__separator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 30px;
+
+    color: var(--strip-white);
+
+    font-size: 13px;
+    line-height: 1;
+  }
+}
+
+// ============================================================
+// FORWARD
+// ============================================================
+
+@keyframes strip-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(
+      calc(-1 * var(--strip-distance)),
+      0,
+      0
+    );
+  }
+}
+
+// ============================================================
+// REVERSE
+// ============================================================
+
+@keyframes strip-marquee-reverse {
+  from {
+    transform: translate3d(
+      calc(-1 * var(--strip-distance)),
+      0,
+      0
+    );
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+// ============================================================
+// REDUCED MOTION
+// ============================================================
+
+@media (prefers-reduced-motion: reduce) {
+  .strip-animation {
+    &__track {
+      animation: none;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+// ============================================================
+// MOBILE
+// ============================================================
+
+@media (max-width: 768px) {
+  .strip-animation {
+    height: 78px;
+
+    &__backdrop {
+      height: 82px;
+    }
+
+    &__strip {
+      height: 38px;
+    }
+
+    &__item {
+      font-size: 11px;
+    }
+
+    &__separator {
+      margin-inline: 20px;
+      font-size: 11px;
+    }
+  }
+}

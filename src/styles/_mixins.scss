@@ -7,10 +7,12 @@
     $size: 17px,
     $color: #000,
     $align: start,
-    $family: inherit,
-    $line-height: inherit
+    $height: inherit,
+    $transform: inherit,
+    $family: inherit
 ) {
-    line-height: $line-height;
+    text-transform: $transform;
+    line-height: $height;
     font-family: $family;
     font-weight: $weight;
     text-align: $align;
