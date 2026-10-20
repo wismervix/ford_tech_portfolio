@@ -19,7 +19,7 @@ const defaultItems = [
 
 export default function StripAnimation({
   items = defaultItems,
-  speed = 24,
+  speed = 14,
   reverse = false,
   className = "",
 }: StripAnimationProps) {
@@ -61,41 +61,16 @@ export default function StripAnimation({
           This NEVER moves.
           ===================================================== */}
 
-      {/* <svg
-        className="strip-animation__backdrop"
-        viewBox="0 0 1920 96"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-      >
-        <path
-          className="strip-animation__backdrop-shape"
-          d="
-            M0 24
-            C180 20 340 15 510 12
-            C720 8 900 5 1080 7
-            C1320 9 1530 15 1920 22
-
-            L1920 76
-
-            C1690 82 1500 87 1290 89
-            C1070 92 850 90 650 86
-            C430 82 220 75 0 69
-
-            Z
-          "
-        />
-      </svg> */}
-
       <svg
         className="strip-animation__backdrop"
-        width="1440"
+        width="2050"
         height="140"
-        viewBox="0 0 1440 140"
+        viewBox="0 0 2050 140"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <rect
-          width="1460.58"
+          width="2090.58"
           height="92.7345"
           transform="translate(-12.4395 46.941) rotate(-1.84172)"
           fill="#0E1629"
