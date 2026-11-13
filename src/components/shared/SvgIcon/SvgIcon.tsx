@@ -5,10 +5,24 @@ import "./SvgIcon.scss";
 import * as icons from "./icons";
 
 const iconMap = {
+  star: icons.StarIcon,
+  atom: icons.AtomIcon,
   figma: icons.FigmaIcon,
-  adobeIllustrator: icons.AdobeIllustrationIcon,
+  xHome: icons.XHomeIcon,
+  touch: icons.TouchIcon,
+  award: icons.AwardIcon,
+  awardWhite: icons.AwardWhiteIcon,
+  blocks: icons.BlocksIcon,
+  circle: icons.CircleIcon,
+  toggle: icons.ToggleIcon,
+  laptop: icons.LaptopIcon,
+  bullsEye: icons.BullsEyeIcon,
   wordPress: icons.WordPressIcon,
-  //   homeIcon: icons.HomeIcon,
+  lightning: icons.LightningIcon,
+  smartPhone: icons.SmartPhoneIcon,
+  globeConnect: icons.GlobeConnectIcon,
+  briefcaseClock: icons.BriefcaseClockIcon,
+  adobeIllustrator: icons.AdobeIllustrationIcon,
 } as const;
 
 export type IconName = keyof typeof iconMap;

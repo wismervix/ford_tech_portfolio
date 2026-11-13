@@ -14,7 +14,7 @@ export const TopNavBar = () => {
     <div className="bg-primary text-white py-2 px-4 md:px-20 border-b border-white/10">
       <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-5 sm:gap-2">
         <div className="flex items-center gap-8">
-          <p className="text-xs">Visit Our Social Pages</p>
+          <p className="text-xs">Visit our social pages</p>
           <div className="flex items-center gap-4">
             <a className="hover:text-slate-200 transition-colors">
               <FaInstagram className="w-3 h-3" />

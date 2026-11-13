@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef, useState, type CSSProperties } from "react";
+import SvgIcon from "./shared/SvgIcon/SvgIcon";
 
 // import "./StripAnimation.scss";
 
@@ -19,7 +20,7 @@ const defaultItems = [
 
 export default function StripAnimation({
   items = defaultItems,
-  speed = 14,
+  speed = 7,
   reverse = false,
   className = "",
 }: StripAnimationProps) {
@@ -64,14 +65,14 @@ export default function StripAnimation({
       <svg
         className="strip-animation__backdrop"
         width="2050"
-        height="140"
-        viewBox="0 0 2050 140"
+        height="150"
+        viewBox="0 0 2050 150"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <rect
           width="2090.58"
-          height="92.7345"
+          height="155.7345"
           transform="translate(-12.4395 46.941) rotate(-1.84172)"
           fill="#0E1629"
         />
@@ -99,7 +100,7 @@ export default function StripAnimation({
                 <span className="strip-animation__text">{item}</span>
 
                 <span className="strip-animation__separator" aria-hidden="true">
-                  ✦
+                  <SvgIcon name="star" />
                 </span>
               </div>
             ))}
@@ -114,7 +115,9 @@ export default function StripAnimation({
               <div className="strip-animation__item" key={`second-${index}`}>
                 <span className="strip-animation__text">{item}</span>
 
-                <span className="strip-animation__separator">✦</span>
+                <span className="strip-animation__separator" aria-hidden="true">
+                  <SvgIcon name="star" />
+                </span>
               </div>
             ))}
           </div>

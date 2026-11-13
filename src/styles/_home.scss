@@ -7,8 +7,8 @@
 
 #home-page {
   padding-bottom: 50px;
-  
-  .home-hero {
+
+  section.home-hero {
     color: $white;
     overflow: hidden;
     min-height: 100vh;
@@ -30,33 +30,33 @@
       position: relative;
       z-index: 1;
 
+      .available_pill {
+        height: 45px;
+        max-width: 401px;
+        border-radius: 40px;
+        background-color: #e1f9dc;
+        margin-bottom: 80px;
+        @include mixin.centered(10px);
+        @include mixin.dynamic-text(500, 17px, #3fcd23, center, 134%);
+
+        .dot {
+          width: 17px;
+          height: 17px;
+          border-radius: 50%;
+          background-color: #178d00;
+        }
+      }
+
       .right_limiter {
         max-width: 779px;
-
-        .available_pill {
-          height: 45px;
-          max-width: 401px;
-          border-radius: 40px;
-          background-color: #e1f9dc;
-          margin-bottom: 80px;
-          @include mixin.centered(10px);
-          @include mixin.dynamic-text(500, 17px, #3fcd23, center, 134%);
-
-          .dot {
-            width: 17px;
-            height: 17px;
-            border-radius: 50%;
-            background-color: #178d00;
-          }
-        }
 
         h1 {
           @include mixin.dynamic-text(
             600,
-            55px,
+            clamp(37px, 4vw, 55px),
             $primary,
             start,
-            85px,
+            1.2,
             capitalize
           );
 
@@ -67,11 +67,17 @@
 
         p {
           margin: 37px 0;
-          @include mixin.dynamic-text(400, 28px, #727d79, start, 157%);
+          @include mixin.dynamic-text(
+            400,
+            clamp(17px, 3.05vw, 28px),
+            #727d79,
+            start,
+            157%
+          );
         }
 
         .btn-row {
-            margin-bottom:64px;
+          margin-bottom: 64px;
           @include mixin.row-stack(29px);
 
           .btn {
@@ -90,7 +96,7 @@
               capitalize
             );
 
-            img{
+            img {
               // max-width: 32px;
               width: 29px;
               object-fit: contain;
@@ -98,6 +104,536 @@
           }
         }
       }
+
+      .cta-btns {
+        @include mixin.row-stack(28px);
+
+        .download {
+          width: 225px;
+          height: 60px;
+          border-radius: 25px;
+          padding: 22px 25px 22px 40px;
+
+          .animated-button__label {
+            font-size: 16px;
+          }
+        }
+
+        .btn.white {
+          gap: 12px;
+          width: 158px;
+          height: 57px;
+          border-radius: 12px;
+          border: 1px solid #727d79;
+
+          @include mixin.dynamic-text(
+            500,
+            16px,
+            #727d79,
+            unset,
+            16px,
+            capitalize
+          );
+        }
+      }
+
+      .atom {
+        position: absolute;
+        right: 30%;
+        top: 18%;
+      }
+
+      .x_home {
+        position: absolute;
+        bottom: 26%;
+        left: 2%;
+      }
+
+      .circle_icon {
+        position: absolute;
+        bottom: 26%;
+        right: 38%;
+      }
+
+      .globe_connect {
+        position: absolute;
+        bottom: 22%;
+        right: 6%;
+      }
+    }
+  }
+
+  .card-item {
+    margin: 0 auto;
+    max-width: 258px;
+    overflow: hidden;
+    max-height: 264px;
+    position: relative;
+    border-radius: 20px;
+    background-color: #fff;
+    border: 1px solid #565b5a80;
+    padding: 26px 28px clamp(40px, 5vw, 58px);
+
+    @media (max-width: 640px) {
+      margin: 0 0;
+      max-width: 90%;
+    }
+
+    img.circle-edge {
+      top: 0;
+      right: 0;
+      opacity: 60%;
+      width: 108px;
+      height: 108px;
+      position: absolute;
+    }
+
+    img.circle-edger {
+      top: 0;
+      right: 0;
+      opacity: 60%;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+    }
+
+    .icon-cont {
+      width: 40px;
+      height: 44px;
+      border-radius: 4px;
+      @include mixin.centered();
+      background-color: $alt-secondary;
+    }
+
+    .title {
+      margin: 25px 0 19px;
+      @include mixin.dynamic-text(600, 18px, $primary, start, 28px, capitalize);
+    }
+
+    .desc {
+      // margin-top: auto;
+      @include mixin.dynamic-text(500, 12px, #898989, start, 20px, capitalize);
+    }
+
+    // Even-numbered cards
+    &:nth-child(even) {
+      border-color: $alt-secondary;
+      background-color: $alt-secondary;
+
+      img.circle-edge,
+      img.circle-edger {
+        opacity: 100%;
+      }
+
+      .icon-cont {
+        background-color: $white;
+      }
+
+      .title,
+      .desc {
+        color: $white !important;
+      }
+    }
+  }
+
+  section.home-about {
+    background-color: #f8f8f8;
+    padding: 105px clamp(24px, 5.56vw, 80px);
+
+    h1 {
+      @include mixin.dynamic-text(800, clamp(35px, 3.5vw, 40px), $primary);
+
+      span {
+        color: $secondary;
+      }
+    }
+
+    p {
+      margin: clamp(16px, 2.2vw, 30px) 0 clamp(24px, 4vw, 55px);
+      @include mixin.dynamic-text(
+        400,
+        clamp(17px, 2.05vw, 24px),
+        #6d6d6e,
+        start,
+        171%
+      );
+    }
+
+    .btn.cta {
+      gap: 11px;
+      width: 150px;
+      height: 50px;
+      border-radius: 12px;
+      background-color: $primary;
+
+      @include mixin.dynamic-text(600, 16px, $white, unset, 16px, capitalize);
+    }
+
+    .img-cont {
+      height: 100%;
+      max-width: 557px;
+      max-height: 538px;
+      padding: 0 10px;
+      border-radius: 14px;
+      @include mixin.centered();
+      background-color: $alt-secondary;
+
+      img {
+        width: 100%;
+        height: 100%;
+        max-width: 438px;
+        max-height: 535px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  section.experiences {
+    padding: 141px clamp(16px, 4vw, 72px) 129px;
+
+    .experience-header {
+      margin-bottom: 147px;
+      @include mixin.centered($direction: column);
+    }
+
+    .experience-card {
+      max-width: 482px;
+      padding: 25px 24px;
+      border-radius: 15px;
+      border: 1px solid #000;
+      background-color: #fff;
+
+      .name-logo-cont {
+        @include mixin.row-stack(8px);
+
+        .logo-cont {
+          width: 59px;
+          max-height: 50px;
+          @include mixin.centered();
+
+          img {
+            // height: 30px;
+            object-fit: contain;
+          }
+        }
+
+        .name-cont {
+          @include mixin.stack(8px);
+
+          .name {
+            @include mixin.dynamic-text(600, 19px, #000);
+          }
+
+          .badge {
+            gap: 4px;
+            display: flex;
+            padding: 5.5px 10px;
+            border-radius: 37px;
+            border: 1px solid #000;
+            background-color: #f3f4f6;
+            @include mixin.dynamic-text(600, 8px, #000);
+          }
+        }
+      }
+
+      .role-date-cont {
+        margin: 17px 0 26px;
+
+        .role {
+          margin-bottom: 9px;
+          @include mixin.dynamic-text(600, 19px, #494949);
+        }
+
+        .date-cont {
+          max-width: 220px;
+          @include mixin.spread(8px);
+          @include mixin.dynamic-text(600, 12px, #494949);
+
+          .e-flex {
+            @include mixin.row-stack(5px);
+          }
+        }
+      }
+
+      .desc {
+        @include mixin.dynamic-text(600, 12px, #494949);
+      }
+
+      .tech-badge-cont {
+        max-width: 349px;
+        margin: 37px 0 26px;
+        @include mixin.row-stack(10px);
+
+        .tech-badge {
+          padding: 6px 12px;
+          border-radius: 37px;
+          border: 1px solid #bdbbbb;
+          background-color: #f3f4f6;
+          @include mixin.dynamic-text(600, 10px, #000);
+        }
+      }
+
+      .achievement-title {
+        margin-bottom: 15px;
+        @include mixin.row-stack(5px);
+        @include mixin.dynamic-text(600, 14px, #494949);
+      }
+
+      ul li {
+        @include mixin.row-stack(8px, $wrap: nowrap);
+        @include mixin.dynamic-text(600, 14px, #494949);
+
+        .dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: #494949;
+        }
+      }
+    }
+  }
+
+  section.projects {
+    padding: 68px clamp(16px, 4vw, 72px) 200px;
+    background-color: #f9f9f9;
+
+    .project-header {
+      margin-bottom: 90px;
+      @include mixin.centered($direction: column);
+    }
+
+    .project-card {
+      margin-bottom: 100px;
+      @include mixin.spread(25px, $wrap: nowrap);
+
+      &:nth-child(odd) {
+        flex-direction: row;
+      }
+
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      .img-cont {
+        overflow: hidden;
+        max-width: 600px;
+        max-height: 450px;
+        border-radius: 0 0 30px 30px;
+        @include mixin.centered();
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          // object-fit: contain;
+        }
+      }
+
+      .project-content {
+        max-width: 466px;
+
+        .badge {
+          gap: 4px;
+          display: flex;
+          width: fit-content;
+          padding: 5.5px 10px;
+          border-radius: 37px;
+          border: 1px solid #000;
+          background-color: #f3f4f6;
+          @include mixin.dynamic-text(600, 8px, #000);
+        }
+
+        .name {
+          margin: 10px 0 17px;
+          @include mixin.row-stack();
+          @include mixin.dynamic-text(700, clamp(26px, 3.2vw, 44px), #000);
+
+          img {
+            object-fit: contain;
+            width: clamp(45px, 4vw, 88px);
+            max-height: clamp(36px, 4vw, 57px);
+          }
+        }
+
+        .desc {
+          @include mixin.dynamic-text(500, clamp(16px, 1.9vw, 26px), #63615e);
+        }
+
+        .e-flex {
+          margin: 24px 0 19px;
+          @include mixin.row-stack(8px);
+          @include mixin.dynamic-text(
+            500,
+            13px,
+            #0d0d0d,
+            start,
+            inherit,
+            capitalize
+          );
+        }
+
+        .tech-badge-cont {
+          max-width: 388px;
+          @include mixin.row-stack(14px);
+
+          .tech-badge {
+            height: 39px;
+            padding: 0 10px;
+            border-radius: 9px;
+            max-width: fit-content;
+            border: 1px solid #727d79;
+            @include mixin.centered(5px);
+            @include mixin.dynamic-text(
+              400,
+              13px,
+              $primary,
+              center,
+              100%,
+              capitalize
+            );
+
+            img {
+              // max-width: 32px;
+              width: 22px;
+              object-fit: contain;
+            }
+          }
+        }
+
+        .btn.cta {
+          gap: 18px;
+          width: 164px;
+          height: 50px;
+          border-radius: 17px;
+          margin-top: 25px;
+          background-color: #059b99;
+
+          @include mixin.dynamic-text(
+            600,
+            15px,
+            #fff,
+            unset,
+            inherit,
+            capitalize
+          );
+        }
+      }
+
+      @media (max-width: 768px) {
+        align-items: start;
+        flex-direction: column !important;
+
+        .img-cont {
+          max-width: 70%;
+        }
+      }
+    }
+  }
+}
+
+// ||==========================================================||
+// ||=======================SHARED STYLES======================||
+// ||==========================================================||
+.sec-badge {
+  width: fit-content;
+  padding: 10px 16px;
+  border-radius: 35px;
+  border: 1px solid #000;
+  @include mixin.centered(10px);
+  @include mixin.dynamic-text(600, 19px, $primary);
+}
+
+.sec-title {
+  margin: 15px 0;
+  @include mixin.dynamic-text(600, 40px, $secondary);
+}
+
+.sec-desc {
+  @include mixin.dynamic-text(500, 16px, #505050);
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  color: white;
+  margin: 0 auto;
+  max-width: 1200px;
+  position: relative;
+
+  &::after {
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    margin-left: -3px;
+    position: absolute;
+    border-radius: 9999px;
+    background-color: $secondary;
+  }
+}
+
+/* Container around content */
+.container {
+  width: 50%;
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+
+  /* The circles on the timeline */
+  &::after {
+    content: "";
+    top: 50%;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+    right: -1.5%;
+    border-radius: 50%;
+    position: absolute;
+    background-color: black;
+  }
+
+  /* Add arrows to the containers */
+  &:nth-child(odd) {
+    left: 0;
+  }
+
+  &:nth-child(even) {
+    left: 50%;
+
+    &::after {
+      left: -2%;
+    }
+  }
+}
+
+/* The actual content */
+.content {
+  // padding: 20px 30px;
+  position: relative;
+}
+
+/* Responsive timeline */
+@media screen and (max-width: 768px) {
+  .timeline {
+    &::after {
+      left: 30px;
+    }
+  }
+
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+
+    /* Align circles */
+    &:nth-child(odd)::after,
+    &:nth-child(even)::after {
+      left: 2.8%;
+    }
+
+    /* Make right containers behave like left ones */
+    &:nth-child(even) {
+      left: 0;
     }
   }
 }
